@@ -10,29 +10,27 @@ export const Container = styled.div`
   
 `;
 export const Icon = styled.img`
-  width: 25px;
   height: 25px;
   position: relative;
-  bottom: 2.1875rem;
-  right: 6rem;
+  bottom: 38px;
+  right: 114px;
 `;
-export const Label = styled.p`
-  color: rgba(229, 61, 0, 1);
-  font-size: 15px;
+export const Label = styled.label`
+  color: #fff;
+  font-size: 0.9375rem;
   width: 70%;
-  margin-bottom: 7px;
+  margin-bottom: 0.4375rem;
 `;
 
 export const Input = styled.input`
-  background-color: rgba(229, 61, 0, 0.15);
+  background: rgba(229, 61, 0, 0.15);
   color: #000;
   width: 80%;
-  border-radius: 0.5rem;
-  height: 50px;
-  padding: 10px 10px 10px 45px;
-  letter-spacing: 1px;
-  border: ${props=> props.showError ? "1px solid #c60d00" : "0"} ;
+  border-radius: 0.375rem;
+  height: 3.3175rem;
+  padding: 0.625rem 0.625rem 0.625rem 2.8125rem;
+  letter-spacing: 0.0625rem;
+  border: ${props=> props.showError ? "1px solid #c60d00" : "1px solid transparent"} ;
 `;
 export const Button = styled.button`
- background-color: transparent;
 `;
