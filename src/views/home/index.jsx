@@ -1,13 +1,13 @@
 import * as S from "./home.styles";
 import { useNavigate } from "react-router-dom";
+import InputComponent from "../../components/input";
 
 const Home = () => {
   const nav = useNavigate();
 
   return (
     <S.Container>
-      <p>Home</p>
-      <button type="button" onClick={()=>{nav(`/Access`)}} >Proxima</button>
+     Home
     </S.Container>
   );
 };
