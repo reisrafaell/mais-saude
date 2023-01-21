@@ -13,11 +13,13 @@ const Login = () => {
   return (
     <S.Container>
       <div>
-        <Image img={logoBrand} width={517} />
-        <InputComponent type={"text"} placeholder={"Email"} onChange={onChange} value={""} showError={false} />
-        <InputComponent type={"password"} placeholder={"Senha"} onChange={onChange} value={""} showError={false} />
+        <Image img={logoBrand} width={"32.3125rem"} />
+        <S.ContainerLogin>
+          <InputComponent label={Login} type={"text"} placeholder={"Email"} onChange={onChange} value={""} showError={false} />
+          <InputComponent type={"password"} placeholder={"Senha"} onChange={onChange} value={""} showError={false} />
+        </S.ContainerLogin>
       </div>
-      <Image img={person} width={476} />
+      <Image img={person} width={"32.3125rem"} />
     </S.Container>
   );
 };
