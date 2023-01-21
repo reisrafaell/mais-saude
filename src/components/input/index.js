@@ -3,7 +3,7 @@ import { Container, Icon, Label, Input, Button } from "./styles";
 import password from "../../assets/password.png"
 import email from "../../assets/email.png"
 
-const InputComponent = ({type, placeholder, onChangeText, value, label, showError }) => {
+const InputComponent = ({type, placeholder, onChangeText, value, label, showError, icon }) => {
   const [show, setShow] = useState(false);
 
   return (
@@ -17,12 +17,8 @@ const InputComponent = ({type, placeholder, onChangeText, value, label, showErro
         type={type === "text" || show === true ? false : true}
         placeholder={placeholder}
       ></Input>
-      {type === "text" ? (
-        <Icon src={email} />
-      ) : (
-       
-          <Icon onClick={() => (show ? setShow(false) : setShow(true))} src={password} />
-        
+      {type === "password" &&(
+        <Icon onClick={() => (show ? setShow(false) : setShow(true))} src={password} />
       )}
     </Container>
   );

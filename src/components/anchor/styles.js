@@ -20,6 +20,6 @@ export const Icon = styled(FaArrowLeft)`
   font-size: ${(props) => props.fontSize || "1rem"};
   color: ${(props) => props.color || "#000"};
   &:hover {
-    color: #000;
+   color: rgba(229, 61, 0, 0.15);
   }
 `;
