@@ -6,7 +6,7 @@ const Register = () => {
 
   return (
     <S.Container>
-      <p>Home</p>
+      <p>Register</p>
       <button type="button" onClick={()=>{nav(`/Access`)}} >Proxima</button>
     </S.Container>
   );
