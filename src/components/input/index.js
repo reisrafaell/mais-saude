@@ -8,8 +8,9 @@ const InputComponent = ({type, placeholder, onChangeText, value, label, showErro
 
   return (
     <Container>
-      <Label>{label}</Label>
+      <Label for={placeholder}>{label}</Label>
       <Input
+      id={placeholder}
         showError={showError}
         onChange={onChangeText}
         value={value}
@@ -19,9 +20,9 @@ const InputComponent = ({type, placeholder, onChangeText, value, label, showErro
       {type === "text" ? (
         <Icon src={email} />
       ) : (
-        <Button onClick={() => (show ? setShow(false) : setShow(true))}>
-          <Icon src={password} />
-        </Button>
+       
+          <Icon onClick={() => (show ? setShow(false) : setShow(true))} src={password} />
+        
       )}
     </Container>
   );

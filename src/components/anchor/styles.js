@@ -19,4 +19,7 @@ export const Container = styled.div`
 export const Icon = styled(FaArrowLeft)`
   font-size: ${(props) => props.fontSize || "1rem"};
   color: ${(props) => props.color || "#000"};
+  &:hover {
+    color: #000;
+  }
 `;
