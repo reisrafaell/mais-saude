@@ -8,7 +8,7 @@ const InputComponent = ({type, placeholder, onChangeText, value, label, showErro
 
   return (
     <Container>
-      {/* <Label>{label}</Label> */}
+      <Label>{label}</Label>
       <Input
         showError={showError}
         onChange={onChangeText}
