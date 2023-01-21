@@ -6,21 +6,33 @@ const Button = ({
   href,
   width,
   background,
-  margin
+  margin,
+  type,
+  variant,
+  onClick
 }) => {
   const nav = useNavigate();
-  return (
+  return variant === 'primary' ? (
       <S.Button
+      type={type}
       width={width}
       margin={margin}
       background={background}
-        onClick={() => {
-          nav(`${href}`);
-        }}
+        onClick={onClick}
       >
         {children}
       </S.Button>
-  );
+  ):(
+    <S.Button
+    type={type}
+    width={width}
+    margin={margin}
+    background={background}
+      onClick={() => href && nav(`${href}`)}
+    >
+      {children}
+    </S.Button>
+);
 };
 
 export default Button;

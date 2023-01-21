@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  min-height: 100vh;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -28,8 +27,6 @@ export const ContainerCenter = styled.div`
   
 `;
 export const ContainerImage = styled.div`
-  width: {
-  }
   display: flex;
   align-items: flex-end;
 
