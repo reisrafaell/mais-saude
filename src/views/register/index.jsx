@@ -4,6 +4,7 @@ import imageLogo from "../../assets/logoBrand.png"
 import imagePerson from "../../assets/person.png"
 import Image from "../../components/image";
 import Text from "../../components/text";
+import Anchor from "../../components/anchor";
 
 const Register = () => {
   const nav = useNavigate();
@@ -11,6 +12,7 @@ const Register = () => {
     <S.Container>
       <Image  img={imageLogo} width='25rem'/>
       <S.ContainerCenter>
+        <Anchor icon={true} href='/access'>Voltar</Anchor>
         <Text fontSize={'1rem'} color={'#E53D00'} fontWeight='700'>Cadastro</Text>
         ola</S.ContainerCenter>
      <S.ContainerImage>
