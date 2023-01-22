@@ -40,6 +40,9 @@ export const Input = styled.input`
     }
 
     outline-width: 0;
+    &[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    }
 `;
 
 export const Button = styled.button`
