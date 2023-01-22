@@ -18,7 +18,7 @@ const RecoveryLogin = () => {
       <div>
         <Image img={logoBrand} width={"32.3125rem"} />
         <S.ContainerLogin>
-        <Anchor icon={true} href="/access" color={"#E53D00"} margin="0.5rem 0">
+        <Anchor icon={true} href="/" color={"#E53D00"} margin="0.5rem 0">
           Voltar
         </Anchor>
         <Text
