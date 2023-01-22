@@ -5,6 +5,7 @@ import Image from "../../components/image";
 import imagePerson from "../../assets/person.png";
 import imageLogo from "../../assets/logoBrand.png";
 import Card from "../../components/card";
+import Text from "../../components/text";
 
 const Home = () => {
   const nav = useNavigate();
@@ -23,8 +24,15 @@ const Home = () => {
           </Anchor>
           <Image img={imageLogo} width="22rem" />
         </S.ContainerHeader>
-      <S.ContainerCenter>        
-        Home
+      <S.ContainerCenter>
+        <Text            
+            fontSize={"1.5rem"}
+            color={"#000000"}
+            fontWeight="600"
+            margin="0 0 0.5rem"
+        >
+      Selecione a vacina para editar
+          </Text>        
         <Card variant='card3'/>
       </S.ContainerCenter>
     </S.Container>

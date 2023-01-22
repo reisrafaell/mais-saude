@@ -15,13 +15,31 @@ export const Container = styled.div`
   ${(props) => props.variant === "card1" && card1};
   ${(props) => props.variant === "card2" && card2};
   ${(props) => props.variant === "card3" && card3};
-`;
+
+  @media (max-width: 1200px){
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: rem;
+
+    
+
+  }
+`
 
 export const CardCenter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
+export const CardLeft = styled.div`
+  display: flex;
+  flex: 1;
+  margin-left: 1rem;
+`;
+
+
 export const CardIcon = styled.div`
   background-color: #e53d00;
   border-radius: 0.625rem;
@@ -54,6 +72,8 @@ const card3 = css`
   svg {
     color: #fff;
   }
+
+
 `;
 
 export const IconOpen = styled(AiOutlineCheckCircle)`

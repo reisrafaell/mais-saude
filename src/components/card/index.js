@@ -10,6 +10,7 @@ const Card = ({
   background,
   variant,
   onClick,
+  vaccine
 }) => {
 
   return variant === "card1" ? (
@@ -17,6 +18,9 @@ const Card = ({
       <S.CardIcon>
         <Image img={imageVacina} width="3rem"></Image>
       </S.CardIcon>
+      <S.CardLeft>
+      <Text fontSize='1.2rem' fontWeight='bold'>{vaccine}</Text>
+      </S.CardLeft>
       <S.CardCenter>
       <Text fontSize='0.875rem' fontWeight='bold'>Não Informado</Text>
       <S.IconOpen/>
@@ -27,6 +31,9 @@ const Card = ({
        <S.CardIcon>
         <Image img={imageVacina} width="3rem"></Image>
       </S.CardIcon>
+      <S.CardLeft>
+      <Text fontSize='1.2rem' fontWeight='bold'>{vaccine}</Text>
+      </S.CardLeft>
       <S.CardCenter>
       <Text fontSize='0.875rem' fontWeight='bold'>Em dia</Text>
       <S.IconOpen/>
@@ -37,6 +44,9 @@ const Card = ({
     <S.CardIcon>
         <Image img={imageVacina} width="3rem"></Image>
       </S.CardIcon>
+      <S.CardLeft>
+      <Text fontSize='1.2rem' fontWeight='bold'>{vaccine}</Text>
+      </S.CardLeft>
       <S.CardCenter>
       <Text fontSize='0.875rem' fontWeight='bold'>Em Atraso</Text>
       <S.IconOpen/>
