@@ -50,6 +50,11 @@ export const ContainerLogin = styled.form`
   margin-top: 1.75rem;
   align-items: center;
   padding: 1.5rem;
+  a{
+    width: 100%;
+    text-align: end;
+    font-weight: bold;
+  }
 
    @media (max-width: 1200px){
      width: 17.5rem;

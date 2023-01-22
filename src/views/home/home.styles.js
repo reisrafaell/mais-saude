@@ -14,16 +14,15 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
 
-     a {
+    a {
       font-size: 1rem;
     }
 
-    svg{
-      width:0.5rem;
+    svg {
+      width: 0.8rem;
     }
-
-    }
-`
+  }
+`;
 
 export const ContainerHeader = styled.div`
   display: flex;
@@ -39,13 +38,13 @@ export const ContainerHeader = styled.div`
     justify-content: center;
 
     > img {
-      width: 45% ;
+      width: 45%;
       bottom: 0;
       right: 6%;
       margin-left: 10rem;
     }
-    }
-`
+  }
+`;
 export const ContainerCenter = styled.div`
   width: 40.125rem;
   display: flex;
@@ -57,12 +56,12 @@ export const ContainerCenter = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top:2rem ;
+    margin-top: 2rem;
     padding: 0 1rem;
     width: 100%;
 
-    p{
-      font-size:1.2rem;
+    p {
+      font-size: 1.2rem;
       width: 100%;
     }
   }

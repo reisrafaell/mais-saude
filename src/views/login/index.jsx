@@ -30,13 +30,15 @@ const Login = () => {
 
     if (senha && email) {
       await api
-        .post("person/signup", data).then((res) => {
+        .post("person/login", data)
+        .then((res) => {
           setLoad(false);
-          handleSessionToken(res);
+          handleSessionToken(res.data.token);
           nav("/home");
-        }).catch((err) => {
+        })
+        .catch((err) => {
           setLoad(false);
-          Swal.fire("Sistema indisponível. Tente mais tarde!!");
+          Swal.fire(`${err}`);
         });
     } else {
       setLoad(false);
@@ -54,13 +56,13 @@ const Login = () => {
             label={"Login"}
             type={"text"}
             placeholder={"Email"}
-            onChange={e=> setEmail(e.target.value)}
+            onChangeText={(e) => setEmail(e.target.value)}
             showError={false}
           />
           <InputComponent
             type={"password"}
             placeholder={"Senha"}
-            onChange={e=> setSenha(e.target.value)}
+            onChangeText={(e) => setSenha(e.target.value)}
             showError={false}
           />
           <Anchor
@@ -69,6 +71,7 @@ const Login = () => {
             fontWeight="600"
             margin="0 0 0.5rem"
             href={"/recovery"}
+            width="100%"
           >
             Esqueceu sua senha?
           </Anchor>
@@ -78,6 +81,7 @@ const Login = () => {
             fontWeight="600"
             margin="0 0 1rem"
             href={"/register"}
+            width="100%"
           >
             Não tem conta? Cadastre-se
           </Anchor>
