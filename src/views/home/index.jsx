@@ -6,12 +6,26 @@ import imagePerson from "../../assets/person.png";
 import imageLogo from "../../assets/logoBrand.png";
 import Card from "../../components/card";
 import Text from "../../components/text";
+import Modal from "../../components/modal";
+import { useState } from "react";
+import Load from "../../components/load";
 
 const Home = () => {
   const nav = useNavigate();
+  const [titleModal, setTitleModal] = useState();
+  const[load, setLoad]= useState(false);
 
+  const handleModal =(title)=>{
+    setTitleModal(title)
+    document.getElementById('modal').style.display = 'flex'
+
+
+  }
   return (
     <S.Container>
+      <Load active={load}></Load>
+      <Modal title={titleModal}>    
+      </Modal>
       <S.ContainerHeader>
           <Anchor
             icon={true}

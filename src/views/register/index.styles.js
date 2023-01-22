@@ -18,7 +18,7 @@ export const Container = styled.div`
     justify-content: flex-start;
   }
 `;
-export const ContainerCenter = styled.div`
+export const ContainerCenter = styled.form`
   min-width: 20.875rem;
   background-color: rgba(155, 155, 155, 0.4);
   border-radius: 1rem;

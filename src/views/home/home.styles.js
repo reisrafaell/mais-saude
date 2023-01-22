@@ -63,6 +63,7 @@ export const ContainerCenter = styled.div`
 
     p{
       font-size:1.2rem;
+      width: 100%;
     }
-
+  }
 `;
