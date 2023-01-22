@@ -64,28 +64,33 @@ const Login = () => {
             placeholder={"Senha"}
             onChangeText={(e) => setSenha(e.target.value)}
             showError={false}
+            right={"1.1rem"} 
           />
-          <Anchor
-            fontSize={"0.75rem"}
-            color={"#E53D00"}
-            fontWeight="600"
-            margin="0 0 0.5rem"
-            href={"/recovery"}
-            width="100%"
-          >
-            Esqueceu sua senha?
-          </Anchor>
-          <Anchor
-            fontSize={"0.75rem"}
-            color={"#E53D00"}
-            fontWeight="600"
-            margin="0 0 1rem"
-            href={"/register"}
-            width="100%"
-          >
-            Não tem conta? Cadastre-se
-          </Anchor>
-          <Button children={"Entrar"} height={"2.5rem"} type="submit" />
+          <div>
+            <Anchor
+              fontSize={"0.75rem"}
+              color={"#E53D00"}
+              fontWeight="600"
+              margin="0 0 0.5rem"
+              href={"/recovery"}
+            >
+              Esqueceu sua senha?
+            </Anchor>
+            <Anchor
+              fontSize={"0.75rem"}
+              color={"#E53D00"}
+              fontWeight="600"
+              margin="0 0 1rem"
+              href={"/register"}
+            >
+              Não tem conta? Cadastre-se
+            </Anchor>
+          </div>
+          <Button
+            children={"Entrar"}
+            height={"2.5rem"}
+            type="submit"
+            />
         </S.ContainerLogin>
       </div>
       <Image img={person} width={"32.3125rem"} />

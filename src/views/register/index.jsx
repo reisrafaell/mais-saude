@@ -88,7 +88,7 @@ const Register = () => {
         />
         <InputComponent
           type="number"
-          label="Cpf"
+          label="CPF"
           onChangeText={(e) => setCpf(e.target.value)}
           required
         />
@@ -99,7 +99,7 @@ const Register = () => {
         />
         <InputComponent
           type="number"
-          label="Cep"
+          label="CEP"
           onChangeText={(e) => setCep(e.target.value)}
           required
         />
@@ -112,6 +112,7 @@ const Register = () => {
         <InputComponent
           type="password"
           label="Senha"
+          right={"-7.4rem"}
           onChangeText={(e) => setSenha(e.target.value)}
         />
         <Button
