@@ -83,7 +83,7 @@ const Register = () => {
           onChangeText={(e) => setEmail(e.target.value)}
         />
         <InputComponent
-          type="number"
+          type="password"
           label="Senha"
           onChangeText={(e) => setSenha(e.target.value)}
         />
@@ -92,7 +92,7 @@ const Register = () => {
           width="100%"
           margin="1rem 0"
           onClick={handleSubmit}
-          variant='primary'
+          variant="primary"
         >
           Cadastrar
         </Button>

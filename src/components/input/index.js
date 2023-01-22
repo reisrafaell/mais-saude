@@ -13,7 +13,7 @@ const InputComponent = ({type, placeholder, onChangeText, value, label, showErro
   const password = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg>
 
 
-  return (
+  return type === 'password' ? (
     <Container>
       <Label for={placeholder}>{label}</Label>
       <Input
@@ -21,7 +21,7 @@ const InputComponent = ({type, placeholder, onChangeText, value, label, showErro
         showError={showError}
         onChange={onChangeText}
         value={value}
-        type={type === "text" ||show ? "text" : "password"}
+        type={type === "text" || show ? "text" : "password"}
         placeholder={placeholder}
       ></Input>
       {type === "password" && (
@@ -30,7 +30,23 @@ const InputComponent = ({type, placeholder, onChangeText, value, label, showErro
       </Button>
     )}
     </Container>
-  );
+  ):
+  (
+    <Container>
+      <Label for={placeholder}>{label}</Label>
+      <Input
+      id={placeholder}
+        showError={showError}
+        onChange={onChangeText}
+        value={value}
+        type={type}
+        placeholder={placeholder}
+      ></Input>
+      
+    </Container>
+  )
+  
+  ;
 };
 
 export default InputComponent;

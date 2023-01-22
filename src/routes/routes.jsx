@@ -8,9 +8,9 @@ const Rotas = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/register" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/access" element={<Access/>} />
-        <Route path="/" element={<Register/>} />
+        <Route path="/register" element={<Register/>} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
