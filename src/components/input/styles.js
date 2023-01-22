@@ -32,7 +32,12 @@ export const Input = styled.input`
   height: 2.5rem;
   padding: 0.7rem;
   letter-spacing: 0.0625rem;
-  border: ${props=> props.showError ? "1px solid #c60d00" : "1px solid transparent"} ;
+  border: ${props=> props.showError ? "1px solid #c60d00" : "1px solid transparent"};
+
+    &::placeholder {
+      color: #454545;
+      font-weight: semi-bold;
+    }
 `;
 
 export const Button = styled.button`
