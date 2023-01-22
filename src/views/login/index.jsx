@@ -7,14 +7,18 @@ import Image from "../../components/image";
 import Button from "../../components/button";
 import Text from "../../components/text";
 import Anchor from "../../components/anchor";
+import Load from "../../components/load";
+import { useState } from "react";
 
 const Login = () => {
   const nav = useNavigate();
+  const[load, setLoad]= useState(false);
 
   const onChange = () => { }
 
   return (
     <S.Container>
+       <Load active={load}></Load>
       <div>
         <Image img={logoBrand} width={"32.3125rem"} />
         <S.ContainerLogin>

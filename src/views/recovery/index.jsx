@@ -7,14 +7,18 @@ import Image from "../../components/image";
 import InputComponent from "../../components/input";
 import * as S from "./recovery.styles";
 import Anchor from "../../components/anchor";
+import { useState } from "react";
+import Load from "../../components/load";
 
 const RecoveryLogin = () => {
   const nav = useNavigate();
+  const[load, setLoad]= useState(false);
 
   const onChange = () => { }
 
   return (
     <S.Container>
+       <Load active={load}></Load>
       <div>
         <Image img={logoBrand} width={"32.3125rem"} />
         <S.ContainerLogin>

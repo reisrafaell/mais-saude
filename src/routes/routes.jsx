@@ -4,10 +4,12 @@ import Access from "../views/access";
 import Register from "../views/register";
 import Login from "../views/login";
 import RecoveryLogin from "../views/recovery";
+import { LoginContexProvider } from "../contex/authContex";
 
 const Rotas = () => {
   return (
     <BrowserRouter>
+    <LoginContexProvider>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/recovery" element={<RecoveryLogin />} />
@@ -15,6 +17,7 @@ const Rotas = () => {
         <Route path="/access" element={<Access />} />
         <Route path="/home" element={<Home />} />
       </Routes>
+    </LoginContexProvider>
     </BrowserRouter>
   );
 };
