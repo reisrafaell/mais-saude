@@ -7,6 +7,7 @@ height: 100vh;
 display: flex;
 align-items: flex-end;
 justify-content:  space-evenly;
+overflow-y: hidden;
 
   > div {
     margin-bottom: 10%;
