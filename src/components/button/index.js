@@ -5,6 +5,7 @@ const Button = ({
   children,
   href,
   width,
+  heigth,
   background,
   margin,
   type,
@@ -16,6 +17,7 @@ const Button = ({
       <S.Button
       type={type}
       width={width}
+      heigth={heigth}
       margin={margin}
       background={background}
         onClick={onClick}

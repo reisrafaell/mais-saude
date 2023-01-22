@@ -35,3 +35,20 @@ export const Input = styled.input`
   border: ${props=> props.showError ? "1px solid #c60d00" : "1px solid transparent"} ;
 `;
 
+export const Button = styled.button`
+  background-color: transparent;
+  border: none;
+  position: relative;
+
+   svg {
+    position: absolute;
+    height: 21px;
+    top: -30px;
+    right: -128px;
+
+      @media (max-width: 1200px) {
+        right: -95px;
+      }
+}
+`;
+
