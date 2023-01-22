@@ -38,6 +38,8 @@ export const Input = styled.input`
       color: #454545;
       font-weight: semi-bold;
     }
+
+    outline-width: 0;
 `;
 
 export const Button = styled.button`

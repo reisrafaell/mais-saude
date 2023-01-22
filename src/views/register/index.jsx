@@ -26,13 +26,6 @@ const Register = () => {
   const [load, setLoad] = useState(false);
 
   const api = axios.create({ baseURL: "https://mais-saude-api.vercel.app" });
-  const [ip, setIP] = useState("");
-
-  useEffect(() => {
-    axios.get("https://geolocation-db.com/json/").then((res) => {
-      setIP(res.data.IPv4);
-    });
-  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -69,7 +62,7 @@ const Register = () => {
       <Load active={load}></Load>
       <Image img={imageLogo} width="25rem" />
       <S.ContainerCenter onSubmit={handleSubmit}>
-        <Anchor icon={true} href="/access" color={"#E53D00"} margin="0.5rem 0">
+        <Anchor icon={true} href="/" color={"#E53D00"} margin="0.5rem 0">
           Voltar
         </Anchor>
         <Text

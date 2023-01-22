@@ -1,38 +1,68 @@
 import * as S from "./login.styles";
 import { useNavigate } from "react-router-dom";
 import InputComponent from "../../components/input";
-import logoBrand from "../../assets/logoBrand.png"
-import person from "../../assets/person.png"
+import logoBrand from "../../assets/logoBrand.png";
+import person from "../../assets/person.png";
 import Image from "../../components/image";
 import Button from "../../components/button";
-import Text from "../../components/text";
 import Anchor from "../../components/anchor";
 import Load from "../../components/load";
 import { useState } from "react";
+import { useLogin } from "../../contex/authContex";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const nav = useNavigate();
-  const[load, setLoad]= useState(false);
+  const [load, setLoad] = useState(false);
+  const { handleSessionToken } = useLogin();
+  const [email, setEmail] = useState();
+  const [senha, setSenha] = useState();
+  const api = axios.create({ baseURL: "https://mais-saude-api.vercel.app" });
 
-  const onChange = () => { }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoad(true);
+    const data = {
+      email: email,
+      password: senha,
+    };
+
+    if (senha && email) {
+      await api
+        .post("person/signup", data).then((res) => {
+          setLoad(false);
+          handleSessionToken(res);
+          nav("/home");
+        }).catch((err) => {
+          setLoad(false);
+          Swal.fire("Sistema indisponível. Tente mais tarde!!");
+        });
+    } else {
+      setLoad(false);
+      Swal.fire("Preencha todos os campos!!");
+    }
+  };
 
   return (
     <S.Container>
-       <Load active={load}></Load>
+      <Load active={load}></Load>
       <div>
         <Image img={logoBrand} width={"32.3125rem"} />
-        <S.ContainerLogin>
+        <S.ContainerLogin onSubmit={handleSubmit}>
           <InputComponent
             label={"Login"}
             type={"text"}
             placeholder={"Email"}
-            onChange={onChange}
-            showError={false} />
+            onChange={e=> setEmail(e.target.value)}
+            showError={false}
+          />
           <InputComponent
             type={"password"}
             placeholder={"Senha"}
-            onChange={onChange}
-            showError={false} />
+            onChange={e=> setSenha(e.target.value)}
+            showError={false}
+          />
           <Anchor
             fontSize={"0.75rem"}
             color={"#E53D00"}
@@ -51,7 +81,7 @@ const Login = () => {
           >
             Não tem conta? Cadastre-se
           </Anchor>
-          <Button children={"Entrar"} height={"2.5rem"} />
+          <Button children={"Entrar"} height={"2.5rem"} type="submit" />
         </S.ContainerLogin>
       </div>
       <Image img={person} width={"32.3125rem"} />

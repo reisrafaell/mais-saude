@@ -39,7 +39,7 @@ justify-content:  space-evenly;
     }
 `
 
-export const ContainerLogin = styled.div`
+export const ContainerLogin = styled.form`
   width: 21.5rem;
   height: 21.8125rem;  
   display: flex;
