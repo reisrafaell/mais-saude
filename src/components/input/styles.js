@@ -38,6 +38,10 @@ export const Input = styled.input`
       color: #454545;
       font-weight: semi-bold;
     }
+
+    &[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    }
 `;
 
 export const Button = styled.button`
