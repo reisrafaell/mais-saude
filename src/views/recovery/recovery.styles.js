@@ -40,9 +40,8 @@ justify-content:  space-evenly;
 
 export const ContainerLogin = styled.div`
   width: 21.5rem;
-  height: 21.8125rem;  
+  height: 14.8125rem;  
   display: flex;
-  flex: 1;
   flex-direction: column;
   justify-content: center;
   background-color: rgb(155, 155, 155, 0.4);
