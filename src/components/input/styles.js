@@ -51,14 +51,10 @@ export const Button = styled.div`
 
    svg {
     position: relative;
-    z-index: 1;
     height: 1.3125rem;
     top: -1.875rem;
     right: ${props=> props.right};
-
-      @media (max-width: 1200px) {
-        right: -5.9375rem;
-      }
+    width: 1.5rem;
 }
 `;
 
