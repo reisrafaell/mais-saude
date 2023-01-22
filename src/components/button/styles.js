@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Button = styled.button`
   width: ${props=> props.width || '100%'};
   margin: ${props=> props.margin };
-  height: 3.0625rem;
+  height: ${props=> props.height || "3.0625rem" };
   border: 1px solid #E53D00;
   font-size: 1rem;
   font-weight: bold;
