@@ -12,6 +12,7 @@ export const Container = styled.div`
   @media (max-width: 768px) {
    width: 100%;
   }
+  
 `;
 export const ContainerHeader = styled.div`
   width: 100%;
@@ -44,6 +45,13 @@ export const CardIcon = styled.div`
   border-radius: 0.625rem;
   padding: 0.2rem;
 `;
+export const CardContent = styled.div`
+background-color: red;
+display: flex;
+align-items: flex-start;
+justify-content: center;
+ 
+`;
 
 
 export const IconClose = styled(GrClose)`
@@ -51,3 +59,4 @@ export const IconClose = styled(GrClose)`
   font-size: 2rem;
   color: #000;
 `;
+

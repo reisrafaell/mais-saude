@@ -11,6 +11,7 @@ import Button from "../../components/button";
 import Load from "../../components/load";
 import axios from "axios";
 import Swal from "sweetalert2";
+
 import { useLogin } from "../../contex/authContex";
 const Register = () => {
   const nav = useNavigate();

@@ -11,10 +11,11 @@ const Anchor = ({
   as,
   fontWeight,
   href,
+  width
 }) => {
   const nav = useNavigate();
   return (
-    <S.Container margin={margin}>
+    <S.Container margin={margin} width={width}>
       {icon && <S.Icon fontSize={fontSize} color={color} />}
       <S.AnchorComponent
         onClick={() => {

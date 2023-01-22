@@ -20,7 +20,9 @@ const Modal = ({ children, title }) => {
           </Text>
           <S.IconClose onClick={closeModal} />
         </S.ContainerHeader>
+        <S.CardContent>
         {children}
+        </S.CardContent>
       </S.Container>
     </S.Section>
   );

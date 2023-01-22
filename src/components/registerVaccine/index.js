@@ -4,10 +4,7 @@ import Button from "../button";
 import InputComponent from "../input";
 import * as S from "./styles";
 
-const RegisterVaccine = () => {
-  const nav = useNavigate();
-
-  const onChange = () => { }
+const RegisterVaccine = ({onChangeData,onChangeLote, onClick}) => {
 
   return (
     <S.Container>
@@ -18,18 +15,20 @@ const RegisterVaccine = () => {
               label={"Data de Vacinação"}
               type={"text"}
               placeholder={"Data"}
-              onChange={onChange}
+              onChangeText={onChangeData}
               showError={false} />
             <InputComponent
               label={"Lote da Vacina"}
-              type={"number"}
+              type={"text"}
               placeholder={"Lote"}
-              onChange={onChange}
+              onChangeText={onChangeLote}
               showError={false} />
             <Button
               children={"Cadastrar"}
               height={"2.5rem"}
               margin={"1rem 0 0 0"}
+              onClick={onClick}
+              variant="primary"
               />
           </div>
           <Anchor
