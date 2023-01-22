@@ -6,6 +6,7 @@ import person from "../../assets/person.png"
 import Image from "../../components/image";
 import Button from "../../components/button";
 import Text from "../../components/text";
+import Anchor from "../../components/anchor";
 
 const Login = () => {
   const nav = useNavigate();
@@ -28,22 +29,24 @@ const Login = () => {
             placeholder={"Senha"}
             onChange={onChange}
             showError={false} />
-          <Text
+          <Anchor
             fontSize={"0.75rem"}
             color={"#E53D00"}
             fontWeight="600"
             margin="0 0 0.5rem"
+            href={"/recovery"}
           >
             Esqueceu sua senha?
-          </Text>
-          <Text
+          </Anchor>
+          <Anchor
             fontSize={"0.75rem"}
             color={"#E53D00"}
             fontWeight="600"
             margin="0 0 1rem"
+            href={"/register"}
           >
             Não tem conta? Cadastre-se
-          </Text>
+          </Anchor>
           <Button children={"Entrar"} height={"2.5rem"} />
         </S.ContainerLogin>
       </div>

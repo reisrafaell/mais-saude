@@ -10,4 +10,8 @@ export const Container = styled.section`
     rgba(249, 249, 249, 0.67) 100%
   );
   display: flex;
+
+  input, textarea, select {
+  font: inherit !important;
+}
 `;
