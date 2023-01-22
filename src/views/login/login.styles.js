@@ -56,6 +56,13 @@ export const ContainerLogin = styled.form`
     font-weight: bold;
   }
 
+  > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
    @media (max-width: 1200px){
      width: 17.5rem;
      height: 16.8125rem;

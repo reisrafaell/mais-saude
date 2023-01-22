@@ -45,19 +45,19 @@ export const Input = styled.input`
     }
 `;
 
-export const Button = styled.button`
+export const Button = styled.div`
   background-color: transparent;
   border: none;
-  position: relative;
 
    svg {
-    position: absolute;
-    height: 21px;
-    top: -30px;
-    right: -128px;
+    position: relative;
+    z-index: 1;
+    height: 1.3125rem;
+    top: -1.875rem;
+    right: ${props=> props.right};
 
       @media (max-width: 1200px) {
-        right: -95px;
+        right: -5.9375rem;
       }
 }
 `;
