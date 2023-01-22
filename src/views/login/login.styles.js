@@ -65,6 +65,6 @@ export const ContainerLogin = styled.form`
 
    @media (max-width: 1200px){
      width: 17.5rem;
-     height: 16.8125rem;
+     height: 17.8125rem;
    }
 `
