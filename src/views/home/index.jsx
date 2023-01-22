@@ -34,7 +34,7 @@ const Home = () => {
   };
 
   const handleData = async () => {
-    if (dataModal && lote && idModal) {
+    if (dataModal  && idModal) {
       setLoad(true);
       const body = {
         date: dataModal,
