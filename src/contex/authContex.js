@@ -27,14 +27,14 @@ export const LoginContexProvider = ({ children }) => {
     setSesionToken(value);
   };
 
-  console.log(cpfNumber);
-  console.log(sessionToken)
+ 
   return (
     <LoginContext.Provider
       value={{
         handleCpf,
         cpfNumber,
         handleSessionToken,
+        sessionToken
       }}
     >
       {children}

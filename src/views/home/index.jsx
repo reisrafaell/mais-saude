@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import * as S from "./home.styles";
 import { useNavigate } from "react-router-dom";
 import Anchor from "../../components/anchor";
@@ -19,27 +20,65 @@ const Home = () => {
   const [titleModal, setTitleModal] = useState();
   const [load, setLoad] = useState(false);
   const [data, setData] = useState();
+  const [dataModal, setDataModal] = useState();
   const [lote, setLote] = useState();
-  const { handleCpf, handleSessionToken } = useLogin();
+  const [name, setName] = useState();
+  const [idModal, setIdModal] = useState();
+  const { handleCpf, sessionToken } = useLogin();
 
-  const handleModal = (title) => {
+  const api = axios.create({ baseURL: "https://mais-saude-api.vercel.app" });
+  const handleModal = (title, key) => {
+    setIdModal(key)
     setTitleModal(title);
     document.getElementById("modal").style.display = "flex";
   };
+  
   const handleData = async () => {
-    if (data && lote) {
+    if (dataModal && lote && idModal) {
       setLoad(true);
+        const body = {
+          date: dataModal,
+          batch: lote,
+          idVaccine: idModal,
+        };
+        const config = {
+          headers: {
+            authorization: `Bearer ${sessionToken}`,
+          },
+        };
+        await api.patch("/vaccination/check", body, config).then((res) => {
+          setLoad(false);
+           Swal.fire("Registrado com Sucesso!!");
+
+        });
+   
     } else {
       Swal.fire("Informe todos os dados!!");
     }
   };
+  useEffect(() => {
+    setLoad(true);
+    const call = async () => {
+      const config = {
+        headers: {
+          authorization: `Bearer ${sessionToken}`,
+        },
+      };
+      await api.get("/vaccination", config).then((res) => {
+        setLoad(false);
+        setData(res.data);
+      });
+    };
+
+    call();
+  }, []);
 
   return (
     <S.Container>
       <Load active={load}></Load>
       <Modal title={titleModal}>
         <RegisterVaccine
-          onChangeData={(e) => setData(e.target.value)}
+          onChangeData={(e) => setDataModal(e.target.value)}
           onChangeLote={(e) => setLote(e.target.value)}
           onClick={handleData}
         ></RegisterVaccine>
@@ -52,7 +91,7 @@ const Home = () => {
           color={"#E53D00"}
           margin="0.5rem 0"
         >
-          Voltar
+          Sair
         </Anchor>
         <Image img={imageLogo} width="22rem" />
       </S.ContainerHeader>
@@ -65,7 +104,24 @@ const Home = () => {
         >
           Selecione a vacina para editar
         </Text>
-        <Card variant="card3" onClick={() => handleModal("titulo")} />
+       
+        {data &&
+          data.map((e, key) => {
+            return (
+              <Card
+                id={key}
+                vaccine={e.name}
+                variant={
+                  e.status == "Não informado"
+                    ? "card1"
+                    : e.status == "Em atraso"
+                    ? "card2"
+                    : "card3"
+                }
+                onClick={() => handleModal(e.name, e.id)}
+              />
+            );
+          })}
       </S.ContainerCenter>
     </S.Container>
   );

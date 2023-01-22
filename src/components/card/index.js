@@ -10,11 +10,12 @@ const Card = ({
   background,
   variant,
   onClick,
-  vaccine
+  vaccine,
+  id
 }) => {
 
   return variant === "card1" ? (
-    <S.Container background={background} variant={variant} onClick={onClick}>
+    <S.Container id={id}background={background} variant={variant} onClick={onClick}>
       <S.CardIcon>
         <Image img={imageVacina} width="3rem"></Image>
       </S.CardIcon>
@@ -27,7 +28,7 @@ const Card = ({
       </S.CardCenter>
     </S.Container>
   ) : variant === "card2" ? (
-    <S.Container background={background} variant={variant} onClick={onClick}>
+    <S.Container id={id} background={background} variant={variant} onClick={onClick}>
        <S.CardIcon>
         <Image img={imageVacina} width="3rem"></Image>
       </S.CardIcon>
@@ -40,7 +41,7 @@ const Card = ({
       </S.CardCenter>
     </S.Container>
   ) : (
-    <S.Container background={background} variant={variant} onClick={onClick}>
+    <S.Container id={id} background={background} variant={variant} onClick={onClick}>
     <S.CardIcon>
         <Image img={imageVacina} width="3rem"></Image>
       </S.CardIcon>

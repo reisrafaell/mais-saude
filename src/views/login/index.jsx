@@ -1,3 +1,4 @@
+import React,{useEffect} from "react";
 import * as S from "./login.styles";
 import { useNavigate } from "react-router-dom";
 import InputComponent from "../../components/input";
@@ -38,13 +39,14 @@ const Login = () => {
         })
         .catch((err) => {
           setLoad(false);
-          Swal.fire(`${err}`);
+          Swal.fire(`${err.response.data.message}`);
         });
     } else {
       setLoad(false);
       Swal.fire("Preencha todos os campos!!");
     }
   };
+
 
   return (
     <S.Container>

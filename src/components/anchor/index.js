@@ -4,6 +4,7 @@ import { FaArrowLeft } from "react-icons/fa";
 
 const Anchor = ({
   icon,
+  variant,
   children,
   fontSize,
   margin,
@@ -11,25 +12,41 @@ const Anchor = ({
   as,
   fontWeight,
   href,
-  width
+  width,
+  target
 }) => {
   const nav = useNavigate();
-  return (
+  return variant === 'primary' ? (
     <S.Container margin={margin} width={width}>
       {icon && <S.Icon fontSize={fontSize} color={color} />}
       <S.AnchorComponent
-        onClick={() => {
-          nav(`${href}`);
-        }}
         href={href}
         as={as}
         fontSize={fontSize}
         color={color}
         fontWeight={fontWeight}
+        target={target}
       >
         {children}
       </S.AnchorComponent>
     </S.Container>
+  ):(
+    <S.Container margin={margin} width={width}>
+    {icon && <S.Icon fontSize={fontSize} color={color} />}
+    <S.AnchorComponent
+      onClick={() => {
+        nav(`${href}`);
+      }}
+      href={href}
+      as={as}
+      fontSize={fontSize}
+      color={color}
+      fontWeight={fontWeight}
+    >
+      {children}
+    </S.AnchorComponent>
+  </S.Container>
+
   );
 };
 

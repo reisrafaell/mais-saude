@@ -13,7 +13,7 @@ const RegisterVaccine = ({onChangeData,onChangeLote, onClick}) => {
           <div>
             <InputComponent
               label={"Data de Vacinação"}
-              type={"text"}
+              type={"date"}
               placeholder={"Data"}
               onChangeText={onChangeData}
               showError={false} />
@@ -36,7 +36,9 @@ const RegisterVaccine = ({onChangeData,onChangeLote, onClick}) => {
             color={"#E53D00"}
             fontWeight="400"
             margin="3rem 0 0 0"
-            href={"/register"}
+            target={'_blanck'}
+            variant='primary'
+            href={"https://www.youtube.com/watch?v=rv5HImuSutA&t=2s"}
           >
             Para mais informações sobre a vacinas, <strong>clique aqui!</strong>
           </Anchor>

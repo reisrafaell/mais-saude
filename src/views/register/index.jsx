@@ -46,7 +46,8 @@ const Register = () => {
         setLoad(false);
         Swal.fire("Cadastrado com Sucesso!!");
         handleCpf(cpf);
-        handleSessionToken(res)
+        console.log(res)
+        handleSessionToken(res.data.token)
         nav("/home");
       }).catch((err)=>{
         setLoad(false);

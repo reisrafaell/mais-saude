@@ -34,7 +34,7 @@ export const Section = styled.section`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   top: 0;
   background: rgba(0, 0, 0, 0.7);
@@ -46,7 +46,6 @@ export const CardIcon = styled.div`
   padding: 0.2rem;
 `;
 export const CardContent = styled.div`
-background-color: red;
 display: flex;
 align-items: flex-start;
 justify-content: center;
