@@ -50,7 +50,7 @@ const Card = ({
       </S.CardLeft>
       <S.CardCenter>
       <Text fontSize='0.875rem' fontWeight='bold'>Em Atraso</Text>
-      <S.IconOpen/>
+      <S.IconClose/>
       </S.CardCenter>
     </S.Container>
   );
