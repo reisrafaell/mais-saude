@@ -56,9 +56,6 @@ export const Button = styled.div`
     top: -1.875rem;
     right: ${props=> props.right};
 
-      @media (max-width: 1200px) {
-        right: -5.9375rem;
-      }
 }
 `;
 
