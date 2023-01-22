@@ -9,11 +9,10 @@ align-items: flex-end;
 justify-content:  space-evenly;
 
   > div {
-    margin-bottom: 10%;
+    margin-bottom: 20%;
     display: flex;
     flex-direction: column;
-    align-items: center
-
+    align-items: center;
   }
 
   @media (max-width: 1200px) {
@@ -22,7 +21,7 @@ justify-content:  space-evenly;
     justify-content: center;
 
     > div {
-      margin-bottom: 45%;
+      margin-bottom: 55%;
 
       > img {
       width: 70%;
@@ -43,13 +42,23 @@ export const ContainerLogin = styled.div`
   width: 21.5rem;
   height: 21.8125rem;  
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: center;
   background-color: rgb(155, 155, 155, 0.4);
   border-radius: 0.75rem;
   margin-top: 1.75rem;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
+
+    > div {
+      width: 100%;
+    }
+
+    > p {
+      width: 100%;
+      flex: 1;
+    }
 
    @media (max-width: 1200px){
      width: 17.5rem;
