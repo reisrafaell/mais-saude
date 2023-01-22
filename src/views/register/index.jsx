@@ -33,32 +33,35 @@ const Register = () => {
     setLoad(true);
     const data = {
       name: name,
-      cpf: cpf,
+      cpf: cpf.replace(/[^\d]/g, ""),
       birth_date: dtaNascimento,
-      cep: cep,
+      cep: cep.replace(/[^\d]/g, ""),
       phone: telefone,
       email: email,
       password: senha,
     };
 
     if (name && telefone && cep && cpf && dtaNascimento && senha && email) {
-      await api.post("person/signup", data).then((res) => {
-        setLoad(false);
-        Swal.fire("Cadastrado com Sucesso!!");
-        handleCpf(cpf);
-        console.log(res)
-        handleSessionToken(res.data.token)
-        nav("/home");
-      }).catch((err)=>{
-        setLoad(false);
-        Swal.fire("Sistema indisponível. Tente mais tarde!!");
-      });
+      await api
+        .post("person/signup", data)
+        .then((res) => {
+          setLoad(false);
+          Swal.fire("Cadastrado com Sucesso!!");
+          handleCpf(cpf);
+          console.log(res);
+          handleSessionToken(res.data.token);
+          nav("/home");
+        })
+        .catch((err) => {
+          setLoad(false);
+          Swal.fire("Sistema indisponível. Tente mais tarde!!");
+        });
     } else {
       setLoad(false);
       Swal.fire("Preencha todos os campos!!");
     }
   };
-  
+
   return (
     <S.Container>
       <Load active={load}></Load>
@@ -84,13 +87,48 @@ const Register = () => {
         <InputComponent
           type="tel"
           label="Telefone"
+          variant="mask"
+          mask={[
+            "(",
+            /[0-9]/,
+            /\d/,
+            ")",
+            " ",
+            /\d/,
+            /\d/,
+            /\d/,
+            /\d/,
+            /\d/,
+            "-",
+            /\d/,
+            /\d/,
+            /\d/,
+            /\d/,
+          ]}
           onChangeText={(e) => setTelefone(e.target.value)}
           required
         />
         <InputComponent
-          type="number"
+          type="text"
           label="CPF"
           onChangeText={(e) => setCpf(e.target.value)}
+          variant="mask"
+          mask={[
+            /[0-9]/,
+            /\d/,
+            /\d/,
+            ".",
+            /\d/,
+            /\d/,
+            /\d/,
+            ".",
+            /\d/,
+            /\d/,
+            /\d/,
+            "-",
+            /\d/,
+            /\d/,
+          ]}
           required
         />
         <InputComponent
@@ -99,8 +137,10 @@ const Register = () => {
           onChangeText={(e) => setDtaNascimento(e.target.value)}
         />
         <InputComponent
-          type="number"
+          type="text"
           label="CEP"
+          variant="mask"
+          mask={[/[0-9]/, /\d/, ".", /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/]}
           onChangeText={(e) => setCep(e.target.value)}
           required
         />
