@@ -15,11 +15,12 @@ export const Container = styled.div`
     justify-content: center;
 
     a {
-      font-size: 1rem;
+      font-size: 1.5rem;
+      margin-left: 0.625rem;
     }
 
     svg {
-      width: 0.8rem;
+      width: 1rem;
     }
   }
 `;
@@ -33,15 +34,13 @@ export const ContainerHeader = styled.div`
   padding: 0 3rem;
 
   @media (max-width: 1200px) {
-    flex-direction: row;
+    display: flex;
     align-items: center;
-    justify-content: center;
-
+    width: 100%;
+    padding: 0 2rem;
     > img {
       width: 45%;
-      bottom: 0;
-      right: 6%;
-      margin-left: 10rem;
+      
     }
   }
 `;

@@ -28,48 +28,46 @@ const Home = () => {
 
   const api = axios.create({ baseURL: "https://mais-saude-api.vercel.app" });
   const handleModal = (title, key) => {
-    setIdModal(key)
+    setIdModal(key);
     setTitleModal(title);
     document.getElementById("modal").style.display = "flex";
   };
-  
+
   const handleData = async () => {
     if (dataModal && lote && idModal) {
       setLoad(true);
-        const body = {
-          date: dataModal,
-          batch: lote,
-          idVaccine: idModal,
-        };
-        const config = {
-          headers: {
-            authorization: `Bearer ${sessionToken}`,
-          },
-        };
-        await api.patch("/vaccination/check", body, config).then((res) => {
-          setLoad(false);
-           Swal.fire("Registrado com Sucesso!!");
-
-        });
-   
-    } else {
-      Swal.fire("Informe todos os dados!!");
-    }
-  };
-  useEffect(() => {
-    setLoad(true);
-    const call = async () => {
+      const body = {
+        date: dataModal,
+        batch: lote,
+        idVaccine: idModal,
+      };
       const config = {
         headers: {
           authorization: `Bearer ${sessionToken}`,
         },
       };
-      await api.get("/vaccination", config).then((res) => {
-        setLoad(false);
-        setData(res.data);
+      await api.patch("/vaccination/check", body, config).then((res) => {
+        call();
+        Swal.fire("Registrado com Sucesso!!");
+        document.getElementById("modal").style.display = "none";
       });
+    } else {
+      Swal.fire("Informe todos os dados!!");
+    }
+  };
+  const call = async () => {
+    setLoad(true);
+    const config = {
+      headers: {
+        authorization: `Bearer ${sessionToken}`,
+      },
     };
-
+    await api.get("/vaccination", config).then((res) => {
+      setLoad(false);
+      setData(res.data);
+    });
+  };
+  useEffect(() => {
     call();
   }, []);
 
@@ -104,19 +102,14 @@ const Home = () => {
         >
           Selecione a vacina para editar
         </Text>
-       
+
         {data &&
-          data.map((e, key) => {
+          data.map((e) => {
             return (
               <Card
-                id={key}
+                id={e.id}
                 vaccine={e.name}
-                variant={
-                  e.status == "Não informado"
-                    ? "card1"
-                    : e.status == "Em atraso"
-                    ? "card2"
-                    : "card3"
+                variant={e.status == "Não informado" ? "card1" : e.status == "Em dia" ? "card2" : "card3"
                 }
                 onClick={() => handleModal(e.name, e.id)}
               />
