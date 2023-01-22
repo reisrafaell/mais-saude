@@ -58,7 +58,7 @@ const Register = () => {
       Swal.fire("Preencha todos os campos!!");
     }
   };
-
+  
   return (
     <S.Container>
       <Load active={load}></Load>
@@ -82,7 +82,7 @@ const Register = () => {
           required
         />
         <InputComponent
-          type="number"
+          type="tel"
           label="Telefone"
           onChangeText={(e) => setTelefone(e.target.value)}
           required

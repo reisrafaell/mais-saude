@@ -49,6 +49,8 @@ const Home = () => {
       await api.patch("/vaccination/check", body, config).then((res) => {
         call();
         Swal.fire("Registrado com Sucesso!!");
+        setDataModal("");
+        setLote("");
         document.getElementById("modal").style.display = "none";
       });
     } else {
@@ -76,6 +78,8 @@ const Home = () => {
       <Load active={load}></Load>
       <Modal title={titleModal}>
         <RegisterVaccine
+          valueData={dataModal}
+          valueLote={lote}
           onChangeData={(e) => setDataModal(e.target.value)}
           onChangeLote={(e) => setLote(e.target.value)}
           onClick={handleData}
@@ -85,7 +89,7 @@ const Home = () => {
         <Anchor
           icon={true}
           fontSize="1.5rem"
-          href="/access"
+          href="/"
           color={"#E53D00"}
           margin="0.5rem 0"
         >
@@ -109,7 +113,12 @@ const Home = () => {
               <Card
                 id={e.id}
                 vaccine={e.name}
-                variant={e.status == "Não informado" ? "card1" : e.status == "Em dia" ? "card2" : "card3"
+                variant={
+                  e.status == "Não informado"
+                    ? "card1"
+                    : e.status == "Em dia"
+                    ? "card2"
+                    : "card3"
                 }
                 onClick={() => handleModal(e.name, e.id)}
               />
